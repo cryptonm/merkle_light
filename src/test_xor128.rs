@@ -430,6 +430,7 @@ fn test_level_cache_tree() {
         /*
         level_cache_store.set_external_reader(ExternalReader { read_fn });
          */
+        /*
         level_cache_store.set_external_reader(ExternalReader {
             read_fn: |start, end, buf: &mut [u8]| {
                 let read = reader.read(&mut buf[start..end])?;
@@ -438,6 +439,7 @@ fn test_level_cache_tree() {
                 Ok(())
             }
         });
+         */
         let mt_level_cache: MerkleTree<[u8; 16], XOR128, LevelCacheStore<_>> =
             MerkleTree::from_data_store(level_cache_store, count)
                 .expect("Failed to create MT from data store");
